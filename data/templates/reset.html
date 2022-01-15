@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Reset Page
+{% endblock %}
+
+{% block style %}
+@media only screen and (max-width:800px) {
+    form{
+        margin-left: 5%;
+        margin-right:5%;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    form{
+        margin-left: 20%;
+        margin-right:20%;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                Reset Password
+            </h1>
+            <p>Masukkan e-mail pada form dibawah ini untuk melakukan pengaturan ulang password anda</p>
+
+
+
+            <br>
+            <br>
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Address") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-xs btn-block btn-secondary") }}
+        </form>
+
+
+    </div>
+</body>
+
+{% endblock %}

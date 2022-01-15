@@ -1,0 +1,59 @@
+    @media only screen and (max-width:768px) {
+        .fixed-top {
+            position: relative;
+        }
+
+        .navbar-expand-sm .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        #le-fluid-de-container {
+            display: block;
+        }
+
+        .container-fluid {
+            margin-top: 0px;
+        }
+
+        .nav-item {
+            text-align: center;
+            padding: 0.25em;
+            background-color: #FFFFFF;
+            margin: 1px;
+        }
+
+        .nav-bar-item:hover {
+            color: #a9ca31;
+        }
+    }
+
+    @media only screen and (min-width:768px) {
+
+        .container-fluid {
+            margin-top: 100px;
+        }
+
+        #le-fluid-de-container {
+            margin-top: 0px;
+        }
+
+        .nav-bar-item:hover {
+            color: #a9ca31;
+        }
+    }
+
+    .jumbotron {
+      background-color: #a9ca31; /* green? */
+      color: #252525; /* font color black */
+      padding: 100px 25px;
+    }
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://s3-wp-lyleprintingandp.netdna-ssl.com/wp-content/uploads/2015/04/10180015/Kale-696x272.jpg");
+      min-height: 100%;
+    }

@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Data Sticky Trap
+{% endblock %}
+
+{% block style %}
+.divider
+{
+	position: relative;
+	margin-top: 45px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="col-md-11 p-xs mx-auto my-3 text-center">
+
+
+            <h1 class="h3 mb-3 font-weight-normal-center" style="padding-top:3em;">
+                Dibawah ini merupakan <span style="color:#ff0000;">contoh&nbsp;</span>dari halaman unggah yang akan ditampilkan
+            </h1>
+ <div class="container-fluid container item-center">
+        <h4 class="h4 mb-0">
+            Isi form dibawah ini untuk memasukkan gambar yang ingin anda unggah
+        </h4>
+
+     <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+<!--you have uploaded this image, goback to..-->
+            <br>
+
+            {{ form.place.label() }}
+            <input class="form-control" type="text" placeholder="Lokasi" aria-label="Disabled input example" disabled>
+
+            <br>
+
+<!--            {{ form.file(class="btn btn-xs btn-secondary") }}-->
+            <button type="uploadfile" class="btn btn-secondary btn-xs" disabled>Masukkan Gambar</button>
+<!--            {{ form.submit(class="btn btn-xs btn-secondary") }}-->
+            <button type="button" class="btn btn-secondary btn-xs" disabled>Unggah Gambar</button>
+        </form>
+     </div>
+ </div>
+     <br><br>
+
+<div class="wrapper">
+	<div class="divider div-transparent"></div>
+</div>
+
+    <div class="modal fade" id="getEmail">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1>Title</h1>
+            </div>
+            <div class="modal-body">
+                Sorry! We're stil under development. Please put your email below if you're interested, We'll get back to you!
+                <input class="form-control" placeholder="Your Name">
+                <input class="form-control" placeholder="Email">
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-default" value="Submit">
+                <input class="btn btn-default" data-dismiss="modal" value="Close">
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <h1 class="h3 mb-3 font-weight-normal-center" style="padding-top:3em;">
+                Dibawah ini merupakan <span style="color:#ff0000;">contoh&nbsp;</span>dari halaman data yang menampilkan hasil data gambar yang telah diproses
+            </h1>
+ <div class="container-fluid container item-center">
+            <h4 class="h4 mb-5">
+                Data <i>Sticky Trap</i>
+            </h4>
+
+<div class="d-flex justify-content-center">
+<div class="card mb-3" style="width: 690px;">
+  <div class="row">
+    <div class="col-sm-5">
+      <img class="img-fluid" src="static/images/contoh/test3.jpeg" alt="Uploaded Image">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h5 class="card-title">22 Desember 2021   10:32</h5>
+      </div>
+  <ul class="list-group list-group-flush text-left">
+<!--      masukkan perhitungan hama pada trap terhadap luas lahan-->
+    <li class="list-group-item">Tingkat Kerusakan: 25%</li>
+    <li class="list-group-item">
+        Hama Terdeteksi:<br>
+        1. Whitefly: 42%  <br>
+        2. Thrips: 20%  <br>
+        3. Leafminer: 29%  <br>
+        4. Lalat Buah: 9%
+    </li>
+    <li class="list-group-item">
+        Rekomendasi:<br>
+        1. Gunakan insektisida dengan bahan aktif .. sebanyak ..    <br>
+        2. ..
+    </li>
+  </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+            <h6 class="h6 text-center">
+                Demikian <span style="color:#ff0000;">contoh&nbsp;</span>data unggahan yang telah diproses, untuk mendapatkan pemberitahuan mengenai sistem kami tekan
+                <a href="#" data-toggle="modal" data-target="getEmail">disini</a>
+                .
+            </h6>
+
+  </div>
+</div>
+
+{% endblock %}

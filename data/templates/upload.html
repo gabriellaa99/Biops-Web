@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Upload Page
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-8 p-md-5 mx-auto my-3 text-center">
+ <div class="container-fluid container" style="padding:1em;">
+
+
+            <h1 class="h3 mb-3 font-weight-normal-center">
+                Isi form dibawah ini untuk memasukkan gambar yang ingin anda unggah
+            </h1>
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+<!--you have uploaded this image, goback to..-->
+            <br>
+
+            {{ form.place.label() }}
+            {{ form.place(class="form-control", placeholder="Lokasi") }}
+
+            <br>
+
+            {{ form.file(class="btn btn-xs btn-secondary") }}
+            {{ form.submit(class="btn btn-xs btn-secondary") }}
+        </form>
+        <br>
+
+    </div>
+
+<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Try Here !</button>-->
+
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">New message</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <form>-->
+<!--          <div class="mb-3">-->
+<!--            <label for="recipient-name" class="col-form-label">Recipient:</label>-->
+<!--            <input type="text" class="form-control" id="recipient-name">-->
+<!--          </div>-->
+<!--          <div class="mb-3">-->
+<!--            <label for="message-text" class="col-form-label">Message:</label>-->
+<!--            <textarea class="form-control" id="message-text"></textarea>-->
+<!--          </div>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary">Send message</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--var exampleModal = document.getElementById('exampleModal')-->
+<!--exampleModal.addEventListener('show.bs.modal', function (event) {-->
+<!--  // Button that triggered the modal-->
+<!--  var button = event.relatedTarget-->
+<!--  // Extract info from data-bs-* attributes-->
+<!--  var recipient = button.getAttribute('data-bs-whatever')-->
+<!--  // If necessary, you could initiate an AJAX request here-->
+<!--  // and then do the updating in a callback.-->
+<!--  //-->
+<!--  // Update the modal's content.-->
+<!--  var modalTitle = exampleModal.querySelector('.modal-title')-->
+<!--  var modalBodyInput = exampleModal.querySelector('.modal-body input')-->
+
+<!--  modalTitle.textContent = 'New message to ' + recipient-->
+<!--  modalBodyInput.value = recipient-->
+<!--})-->
+
+
+<!--    <form class="form-signin">-->
+<!--      <div class="text-center mb-4">-->
+<!--        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
+<!--        <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>-->
+<!--        <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>-->
+<!--      </div>-->
+
+<!--      <div class="form-label-group">-->
+<!--        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
+<!--        <label for="inputEmail">Email address</label>-->
+<!--      </div>-->
+
+<!--      <div class="form-label-group">-->
+<!--        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
+<!--        <label for="inputPassword">Password</label>-->
+<!--      </div>-->
+
+<!--      <div class="checkbox mb-3">-->
+<!--        <label>-->
+<!--          <input type="checkbox" value="remember-me"> Remember me-->
+<!--        </label>-->
+<!--      </div>-->
+<!--      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+<!--      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>-->
+<!--    </form>-->
+
+  </div>
+
+</div>
+
+{% endblock %}

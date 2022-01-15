@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Upload Page
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-8 p-md-5 mx-auto my-3 text-center">
+ <div class="container-fluid container" style="padding:1em;">
+
+            <h1 class="h3 mb-3 font-weight-normal-center">
+                Isi form dibawah ini untuk memasukkan gambar yang ingin anda unggah
+            </h1>
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+<!--            {{ form.hidden_tag() }}-->
+<!--&lt;!&ndash;you have uploaded this image, goback to..&ndash;&gt;-->
+<!--            <br>-->
+
+<!--            {{ form.place.label() }}-->
+<!--            {{ form.place(class="form-control", placeholder="Lokasi") }}-->
+
+<!--            <br>-->
+
+<!--            {{ form.file(class="btn btn-xs btn-secondary") }}-->
+<!--            {{ form.submit(class="btn btn-xs btn-secondary") }}-->
+        </form>
+        <br>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="col-md-11 p-xs mx-auto my-3 text-center">
+ <div class="container-fluid container item-center" style="padding:1em;">
+
+            <h1 class="h3 mb-5 font-weight-normal-center">
+                Data <i>Sticky Trap</i>
+            </h1>
+
+{% for item in items %}
+<div class="d-flex justify-content-center">
+<div class="card mb-3" style="width: 690px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="img-fluid" src="{{ item.image }}" alt="Uploaded Image">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Time: {{ item.created_at }}</h5>
+<!--        <h5 class="card-title">Card title</h5>-->
+<!--    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Time: {{ item.created_at }}</li>
+  {% if item.result != None %}
+<!--    <li class="list-group-item">Tingkat Kerusakan: {{ item.result.damage*100 }}%</li>-->
+    <li class="list-group-item">Tingkat Kerusakan: </li>
+    <li class="list-group-item">
+<!--        Hama Terdeteksi: {{ item.result.total }}    <br>-->
+<!--        1. Whitefly: {{ item.result.whitefly }}-->
+        Hama Terdeteksi:<br>
+        1. Whitefly: {{ item.result.damage*100 }}%
+    </li>
+    <li class="list-group-item">
+        Rekomendasi:<br>
+        1. Gunakan insektisida dengan bahan aktif .. sebanyak ..    <br>
+        2. ..
+    </li>
+  {% else %}
+    <li class="list-group-item">Result not yet finished</li>
+    <li class="list-group-item">Result not yet finished</li>
+    <li class="list-group-item">Result not yet finished</li>
+<!--    <li class="list-group-item">A third item</li>-->
+  </ul>
+<!--  <div class="card-body">-->
+<!--    <a href="#" class="card-link">Card link</a>-->
+<!--    <a href="#" class="card-link">Another link</a>-->
+<!--  </div>-->
+  {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+            <h6 class="h6 text-center">
+                Demikian contoh data unggahan yang telah diproses, untuk mencoba sistem kami tekan <a href="{{ url_for('upload_page') }}">disini</a>.
+            </h6>
+
+  </div>
+</div>
+
+{% endblock %}
